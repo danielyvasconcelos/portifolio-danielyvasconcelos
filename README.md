@@ -22,9 +22,11 @@ Este é meu portfólio pessoal, criado para apresentar minhas habilidades, exper
 
 ### Ferramentas e Metodologias
 - **CSS Custom Properties** - Variáveis CSS para manutenibilidade
-- **Mobile First** - Design responsivo
+- **Mobile First** - Design responsivo com menu hambúrguer
 - **BEM Methodology** - Nomenclatura CSS organizada
 - **Semantic HTML** - Melhor acessibilidade e SEO
+- **ES6 Modules** - Arquitetura JavaScript modular
+- **GitHub API** - Integração para estatísticas em tempo real
 
 ## 📁 Estrutura do Projeto
 
@@ -37,9 +39,17 @@ portifolio-danielyvasconcelos/
 │   │   ├── variables.css  # Variáveis CSS
 │   │   └── styles.css     # Estilos principais
 │   ├── js/
-│   │   └── main.js        # JavaScript principal
-│   └── images/
-│       └── (imagens do projeto)
+│   │   ├── main.js        # Orquestrador principal
+│   │   └── modules/       # Módulos JavaScript
+│   │       ├── navigation.js    # Navegação e menu mobile
+│   │       ├── animations.js    # Animações e efeitos
+│   │       ├── carousel.js      # Carrossel de projetos
+│   │       ├── modals.js        # Modais de imagem e contato
+│   │       ├── github.js        # Integração GitHub API
+│   │       ├── utils.js         # Funções utilitárias
+│   │       └── contacts.js      # Botões de contato
+│   ├── images/            # Imagens do projeto
+│   └── documents/         # Documentos (currículo PDF)
 │
 ├── index.html             # Página principal
 ├── README.md             # Documentação
@@ -51,7 +61,6 @@ portifolio-danielyvasconcelos/
 ### Paleta de Cores
 - **Primária**: `#000000` (Preto)
 - **Secundária**: `#ffffff` (Branco)
-- **Accent**: `#007acc` (Azul)
 - **Background**: `#f5f5f5` (Cinza claro)
 
 ### Tipografia
@@ -106,14 +115,7 @@ npx serve .
 - Clique com botão direito em `index.html`
 - Selecione "Open with Live Server"
 
-## 📱 Responsividade
 
-O projeto é totalmente responsivo e foi testado nos seguintes dispositivos:
-
-- 📱 **Mobile**: 320px - 576px
-- 📱 **Tablet**: 577px - 768px
-- 💻 **Desktop**: 769px - 1200px
-- 🖥️ **Large Desktop**: 1201px+
 
 ## ♿ Acessibilidade
 
@@ -128,26 +130,21 @@ O projeto segue as diretrizes WCAG 2.1 AA:
 ## 🔧 Funcionalidades
 
 ### Implementadas
-- [x] Layout responsivo
-- [x] Navegação suave
-- [x] Animações CSS
-- [x] Botões interativos
-- [x] Estrutura semântica
+- [x] **Layout responsivo** com menu hambúrguer mobile
+- [x] **Navegação suave** entre seções
+- [x] **Carrossel de projetos** com 9 projetos em 3 slides
+- [x] **Modal de contato** com integração Gmail
+- [x] **Download de currículo** em PDF
+- [x] **Estatísticas do GitHub** em tempo real
+- [x] **Animações CSS** e JavaScript
+- [x] **Hover effects** em imagens de perfil
+- [x] **Arquitetura modular** JavaScript ES6+
+- [x] **Acessibilidade completa** (WCAG 2.1 AA)
+- [x] **SEO otimizado** com meta tags
 
 ### Próximas Implementações
-- [ ] Seção de projetos
-- [ ] Formulário de contato
 - [ ] Modo escuro/claro
-- [ ] Animações JavaScript avançadas
-- [ ] Blog integrado
 
-## 🤝 Como Contribuir
-
-1. **Fork** o projeto
-2. **Crie** uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. **Commit** suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** para a branch (`git push origin feature/AmazingFeature`)
-5. **Abra** um Pull Request
 
 ## 📝 Padrões de Commit
 
@@ -168,44 +165,16 @@ git commit -m "fix: corrige responsividade no mobile"
 git commit -m "docs: atualiza README com instruções"
 ```
 
-## 📊 Performance
-
-### Métricas Lighthouse
-- **Performance**: 95+
-- **Accessibility**: 100
-- **Best Practices**: 100
-- **SEO**: 100
-
-### Otimizações Implementadas
-- Imagens com `loading="lazy"`
-- CSS minificado em produção
-- Fontes otimizadas do Google Fonts
-- Sem dependências externas desnecessárias
-
-## 🌐 Browser Support
-
-| Browser | Version |
-|---------|--------|
-| Chrome  | 60+    |
-| Firefox | 60+    |
-| Safari  | 12+    |
-| Edge    | 79+    |
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
 ## 👩‍💻 Autora
 
-**Daniely Vasconcelos**
-- 🌐 Website: [danielyvasconcelos.dev](https://danielyvasconcelos.dev)
-- 💼 LinkedIn: [linkedin.com/in/daniely-vasconcelos](https://linkedin.com/in/daniely-vasconcelos)
-- 📧 Email: contato@danielyvasconcelos.dev
+**Daniely Evellin da Silva Vasconcelos**
+- 💼 LinkedIn: [linkedin.com/in/daniely-vasconcelos-b86412188](https://linkedin.com/in/daniely-vasconcelos-b86412188)
 - 🐱 GitHub: [@danielyvasconcelos](https://github.com/danielyvasconcelos)
+- 📷 Instagram: [@danielyvasconcelos_](https://www.instagram.com/danielyvasconcelos_/)
+- 📍 Localização: Maceió, Alagoas - Brasil
 
 ---
 
 <div align="center">
   <p>Feito com ❤️ e muito ☕ por Daniely Vasconcelos</p>
-  <p>⭐ Se este projeto te ajudou, considere dar uma estrela!</p>
 </div>

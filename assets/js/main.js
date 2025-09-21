@@ -1,4 +1,4 @@
-// Main JavaScript - Orquestrador dos módulos
+//  Orquestrador dos módulos
 import { setupNavigation, setupSmoothScrolling } from './modules/navigation.js';
 import { setupAnimations } from './modules/animations.js';
 import { setupCarousel } from './modules/carousel.js';
