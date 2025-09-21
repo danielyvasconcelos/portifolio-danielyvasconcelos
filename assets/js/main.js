@@ -17,6 +17,7 @@ function initializePortfolio() {
     setupSmoothScrolling();
     setupAnimations();
     setupContactButtons();
+    setupCarousel();
 }
 
 /**
@@ -211,4 +212,50 @@ function showNotification(message, type = 'info') {
             document.body.removeChild(notification);
         }, 300);
     }, 3000);
+}
+
+/**
+ * Configura funcionalidade do carrossel de projetos
+ */
+function setupCarousel() {
+    const slides = document.querySelectorAll('.carousel__slide');
+    const dots = document.querySelectorAll('.carousel__dot');
+    const prevBtn = document.querySelector('.carousel__btn--prev');
+    const nextBtn = document.querySelector('.carousel__btn--next');
+    
+    let currentSlide = 0;
+    
+    function showSlide(index) {
+        // Remove classe active de todos os slides e dots
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        // Adiciona classe active ao slide e dot atual
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+        
+        currentSlide = index;
+    }
+    
+    function nextSlide() {
+        const next = (currentSlide + 1) % slides.length;
+        showSlide(next);
+    }
+    
+    function prevSlide() {
+        const prev = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(prev);
+    }
+    
+    // Event listeners para botões
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    
+    // Event listeners para dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => showSlide(index));
+    });
+    
+    // Auto-play (opcional)
+    setInterval(nextSlide, 15000); // Muda slide a cada 15 segundos
 }
