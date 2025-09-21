@@ -133,6 +133,37 @@ body {
     grid-column: 1;
 }
 
+.about__location {
+    color: var(--color-accent);
+    font-weight: 500;
+    margin-bottom: var(--spacing-sm);
+}
+
+.about__objective {
+    background-color: var(--color-background);
+    padding: var(--spacing-md);
+    border-left: 4px solid var(--color-accent);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-sm);
+}
+
+.skills {
+    grid-column: 2;
+}
+
+.skills__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.skill-category h4 {
+    font-size: var(--font-size-lg);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 500;
+}
+
 .about__content {
     display: flex;
     gap: var(--spacing-xl);
@@ -254,7 +285,30 @@ body {
    Seção Formação
    ========================================================================== */
 .education {
-    grid-column: 2;
+    grid-column: 1 / -1;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.skill-tag {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    border: 1px solid var(--color-primary);
+    transition: var(--transition-fast);
+}
+
+.skill-tag:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    transform: translateY(-2px);
 }
 
 .education__item {
@@ -299,6 +353,114 @@ body {
     font-size: var(--font-size-xs);
     color: var(--color-accent);
     font-weight: 500;
+}
+
+/* ==========================================================================
+   Seção Experiência Profissional
+   ========================================================================== */
+.experience {
+    grid-column: 1 / -1;
+}
+
+.experience__timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.experience__item {
+    background-color: var(--color-background);
+    padding: var(--spacing-lg);
+    border-left: 4px solid var(--color-accent);
+    position: relative;
+    transition: var(--transition-normal);
+}
+
+.experience__item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.experience__period {
+    background-color: var(--color-accent);
+    color: var(--color-secondary);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: var(--spacing-sm);
+}
+
+.experience__title {
+    font-size: var(--font-size-lg);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+}
+
+.experience__company {
+    color: var(--color-accent);
+    font-weight: 500;
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+}
+
+.experience__description {
+    color: var(--color-text-light);
+    line-height: 1.5;
+    font-size: var(--font-size-sm);
+}
+
+/* ==========================================================================
+   Seção Cursos e Qualificações
+   ========================================================================== */
+.courses {
+    grid-column: 1 / -1;
+}
+
+.courses__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.course__item {
+    background-color: var(--color-background);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-accent);
+    transition: var(--transition-normal);
+}
+
+.course__item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.course__item h4 {
+    color: var(--color-primary);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 500;
+}
+
+.course__institution {
+    color: var(--color-accent);
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+}
+
+.course__period {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.course__skills {
+    color: var(--color-text);
+    font-size: var(--font-size-sm);
+    font-style: italic;
 }
 
 /* ==========================================================================
@@ -357,6 +519,7 @@ body {
     .nav__list {
         flex-wrap: wrap;
         justify-content: center;
+        gap: var(--spacing-sm);
     }
     
     .contact-buttons {
@@ -365,6 +528,11 @@ body {
     
     .section {
         padding: var(--spacing-lg);
+    }
+    
+    .experience__timeline,
+    .courses__content {
+        grid-template-columns: 1fr;
     }
 }
 

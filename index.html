@@ -1,96 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <!-- Meta tags essenciais -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Daniely Vasconcelos - Desenvolvedora Web especializada em tecnologias modernas">
-    <meta name="keywords" content="desenvolvedor, web, frontend, backend, portfolio, Daniely Vasconcelos">
-    <meta name="author" content="Daniely Vasconcelos">
-    
-    <!-- Open Graph / Facebook -->
+    <meta name="description" content="Portfólio de Daniely Evellin da Silva Vasconcelos - Desenvolvedora Back-end e Front-end">
+    <meta name="keywords" content="desenvolvedor, web, frontend, backend, portfolio, Daniely Vasconcelos, Java, Python, React">
+    <meta name="author" content="Daniely Evellin da Silva Vasconcelos">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Portfólio - Daniely Vasconcelos">
-    <meta property="og:description" content="Desenvolvedora Web especializada em criar experiências digitais incríveis">
+    <meta property="og:description" content="Desenvolvedora especializada em back-end com foco em Java, Python e tecnologias modernas">
     <meta property="og:url" content="https://danielyvasconcelos.dev">
-    
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="Portfólio - Daniely Vasconcelos">
-    <meta property="twitter:description" content="Desenvolvedora Web especializada em criar experiências digitais incríveis">
-    
-    <title>Portfólio - Daniely Vasconcelos | Desenvolvedora Web</title>
-    
-    <!-- Favicon -->
+    <meta property="twitter:description" content="Desenvolvedora especializada em back-end com foco em Java, Python e tecnologias modernas">
+    <title>Portfólio - Daniely Vasconcelos | Desenvolvedora Back-end</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
-    <!-- Estilos CSS -->
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <!-- Header com navegação principal -->
     <header class="header" role="banner">
         <div class="logo" aria-label="Logo do portfólio">
             &lt;/&gt;
         </div>
-        
         <nav class="nav" role="navigation" aria-label="Navegação principal">
             <ul class="nav__list">
                 <li><a href="#about" class="nav__link nav__link--active">Sobre mim</a></li>
                 <li><a href="#experience" class="nav__link">Experiência</a></li>
-                <li><a href="#skills" class="nav__link">Hard Skills</a></li>
-                <li><a href="#projects" class="nav__link">Projetos</a></li>
-                <li><a href="#contact" class="nav__link">Contate-me</a></li>
+                <li><a href="#education" class="nav__link">Formação</a></li>
+                <li><a href="#courses" class="nav__link">Cursos</a></li>
+                <li><a href="#contact" class="nav__link">Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Conteúdo principal -->
     <main class="main" role="main">
         <div class="main__container">
-            <!-- Seção Sobre Mim -->
             <section id="about" class="section about" aria-labelledby="about-title">
                 <h2 id="about-title" class="section__title">Sobre mim</h2>
-                
                 <div class="about__content">
                     <figure class="about__image">
-                        <img src="https://via.placeholder.com/150x150/007acc/ffffff?text=DV" 
+                        <img src="https://via.placeholder.com/150x150/c44569/ffffff?text=DV" 
                              alt="Foto de perfil de Daniely Vasconcelos" 
                              loading="lazy">
                     </figure>
-                    
                     <div class="about__text">
-                        <h3>Daniely Vasconcelos</h3>
+                        <h3>Daniely Evellin da Silva Vasconcelos</h3>
+                        <p class="about__location">📍 Maceió, Alagoas</p>
+                        <p class="about__objective">
+                            <strong>Objetivo:</strong> Estágio ou vaga de desenvolvedor(a) Júnior na área de desenvolvimento/programação, com foco em back-end.
+                        </p>
                         <p>
-                            Desenvolvedora Web apaixonada por criar experiências digitais incríveis. 
-                            Atualmente cursando Sistemas para Internet na Uncisal, com formação técnica 
-                            em Informática para Internet pelo IFAL. Especializada em desenvolvimento 
-                            frontend e backend, sempre buscando aprender novas tecnologias e 
-                            implementar as melhores práticas de desenvolvimento.
+                            Desenvolvedora apaixonada por tecnologia, atualmente cursando Sistemas para Internet na Uncisal. 
+                            Técnica em Informática para Internet pelo IFAL, com experiência em pesquisa acadêmica, 
+                            desenvolvimento front-end e back-end. Especializada em Java, Python, React e tecnologias modernas.
                         </p>
                         
                         <div class="contact-buttons" role="group" aria-label="Botões de contato">
                             <button class="btn btn--primary" type="button" aria-label="Entrar em contato">
                                 Contate-me
                             </button>
-                            <button class="btn btn--icon" type="button" aria-label="Curtir perfil">
-                                👍
+                            <button class="btn btn--icon" type="button" aria-label="WhatsApp" data-contact="82 99353-2983">
+                                <img src="https://cdn-icons-png.flaticon.com/512/174/174879.png" 
+                                     alt="WhatsApp" 
+                                     loading="lazy">
                             </button>
-                            <button class="btn btn--icon" type="button" aria-label="Acessar LinkedIn">
+                            <button class="btn btn--icon" type="button" aria-label="Acessar LinkedIn" data-url="https://linkedin.com/in/daniely-vasconcelos">
                                 <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" 
                                      alt="LinkedIn" 
                                      loading="lazy">
                             </button>
-                            <button class="btn btn--icon" type="button" aria-label="Acessar Instagram">
+                            <button class="btn btn--icon" type="button" aria-label="Acessar Instagram" data-url="https://instagram.com/daniely.vasconcelos">
                                 <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" 
                                      alt="Instagram" 
                                      loading="lazy">
                             </button>
-                            <button class="btn btn--icon" type="button" aria-label="Acessar GitHub">
+                            <button class="btn btn--icon" type="button" aria-label="Acessar GitHub" data-url="https://github.com/danielyvasconcelos">
                                 <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" 
                                      alt="GitHub" 
+                                     loading="lazy">
+                            </button>
+                            <button class="btn btn--icon" type="button" aria-label="Email" data-contact="contato.danielyvasconcelos@gmail.com">
+                                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" 
+                                     alt="Email" 
                                      loading="lazy">
                             </button>
                         </div>
@@ -98,41 +91,128 @@
                 </div>
             </section>
 
-            <!-- Seção Formação -->
-            <section id="education" class="section education" aria-labelledby="education-title">
-                <h2 id="education-title" class="section__title">Formação</h2>
-                
-                <article class="education__item">
-                    <h3 class="education__title">Sistemas para Internet</h3>
-                    <p class="education__institution">
-                        Uncisal | Universidade Estadual de Ciências da Saúde de Alagoas
-                    </p>
-                    <time class="education__period" datetime="2024">2024 - Atual</time>
-                </article>
-                
-                <article class="education__item">
-                    <h3 class="education__title">Técnico em Informática para Internet</h3>
-                    <p class="education__institution">
-                        IFAL | Instituto Federal de Alagoas - Campus Maceió
-                    </p>
-                    <time class="education__period" datetime="2021/2023">2021 - 2023</time>
-                </article>
+            <section id="skills" class="section skills" aria-labelledby="skills-title">
+                <h2 id="skills-title" class="section__title">Habilidades Técnicas</h2>
+                <div class="skills__content">
+                    <div class="skill-category">
+                        <h4>Linguagens</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">PHP</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Frameworks</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Spring Framework</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Express.js</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Bancos de Dados</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Ferramentas</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git/GitHub</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Postman</span>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
 
-        <!-- Seção Complementar -->
-        <section id="complementary" class="section complementary" aria-labelledby="complementary-title">
-            <h2 id="complementary-title" class="section__title">Complementar</h2>
-            
-            <div class="complementary__content">
-                <p class="complementary__placeholder">
-                    Esta seção será preenchida com certificações, cursos complementares e conquistas profissionais.
+        <section id="experience" class="section experience" aria-labelledby="experience-title">
+            <h2 id="experience-title" class="section__title">Experiência Profissional</h2>
+            <div class="experience__timeline">
+                <article class="experience__item">
+                    <div class="experience__period">Set 2025 - Atual</div>
+                    <h3 class="experience__title">Pesquisadora PIP-UNCISAL</h3>
+                    <p class="experience__company">Consolidação e Análise de Dados de Máquinas Virtuais</p>
+                    <p class="experience__description">
+                        Pesquisa focada na otimização de custos em computação em nuvem, 
+                        criando base de dados consolidada para instâncias spot em AWS, Azure e Google Cloud.
+                    </p>
+                </article>
+                
+                <article class="experience__item">
+                    <div class="experience__period">Ago 2025 - Atual</div>
+                    <h3 class="experience__title">Monitora Bolsista PET</h3>
+                    <p class="experience__company">Saúde I&SD: Inovação em Saúde Digital no SUS</p>
+                    <p class="experience__description">
+                        Desenvolvimento de soluções para transformação digital do SUS, 
+                        estudando sistemas atuais e implementando melhorias.
+                    </p>
+                </article>
+                
+                <article class="experience__item">
+                    <div class="experience__period">Mai 2025 - Ago 2025</div>
+                    <h3 class="experience__title">Desenvolvedora Front-end Voluntária</h3>
+                    <p class="experience__company">Grupo de Estudo: Estado da Arte de Frontend | Orion UFAL</p>
+                    <p class="experience__description">
+                        Desenvolvimento de aplicações front-end (To-Do List, E-commerce, API), 
+                        prototipagem no Figma e implementação de testes.
+                    </p>
+                </article>
+                
+                <article class="experience__item">
+                    <div class="experience__period">Jul 2024 - Atual</div>
+                    <h3 class="experience__title">Membro Voluntário - Marketing</h3>
+                    <p class="experience__company">KATIE UFAL</p>
+                    <p class="experience__description">
+                        Criação de conteúdo e materiais para apoio a mulheres em STEM.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section id="education" class="section education" aria-labelledby="education-title">
+            <h2 id="education-title" class="section__title">Formação Acadêmica</h2>
+            <article class="education__item">
+                <h3 class="education__title">Sistemas para Internet</h3>
+                <p class="education__institution">
+                    Uncisal | Universidade Estadual de Ciências da Saúde de Alagoas
                 </p>
+                <time class="education__period" datetime="2024/2026">2024 - 2026 (Noturno)</time>
+            </article>
+            <article class="education__item">
+                <h3 class="education__title">Técnica em Informática para Internet</h3>
+                <p class="education__institution">
+                    IFAL | Instituto Federal de Alagoas Campus Rio Largo
+                </p>
+                <time class="education__period" datetime="2021/2023">2021 - 2023</time>
+            </article>
+        </section>
+
+        <section id="courses" class="section courses" aria-labelledby="courses-title">
+            <h2 id="courses-title" class="section__title">Cursos e Qualificações</h2>
+            <div class="courses__content">
+                <article class="course__item">
+                    <h4>Trilha Front-end - Programa One</h4>
+                    <p class="course__institution">Alura e Oracle</p>
+                    <p class="course__period">Mar 2023 - Set 2023</p>
+                    <p class="course__skills">HTML, CSS, JavaScript, React, Responsividade</p>
+                </article>
+                <article class="course__item">
+                    <h4>Programador Web</h4>
+                    <p class="course__institution">IFAL - Instituto Federal de Alagoas</p>
+                    <p class="course__period">Jun 2020 - Set 2020</p>
+                    <p class="course__skills">HTML, CSS, JavaScript básico</p>
+                </article>
             </div>
         </section>
     </main>
 
-    <!-- Scripts JavaScript -->
     <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -100,29 +100,45 @@ function setupContactButtons() {
     // Botão principal de contato
     if (contactButton) {
         contactButton.addEventListener('click', function() {
-            // Aqui você pode adicionar lógica para abrir modal de contato
-            // ou redirecionar para seção de contato
-            alert('Funcionalidade de contato será implementada em breve!');
+            const email = 'contato.danielyvasconcelos@gmail.com';
+            const subject = 'Contato via Portfólio';
+            const body = 'Olá Daniely, vi seu portfólio e gostaria de conversar sobre oportunidades.';
+            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         });
     }
     
-    // Botões de redes sociais
+    // Botões de redes sociais e contato
     socialButtons.forEach(button => {
         button.addEventListener('click', function() {
+            const url = this.getAttribute('data-url');
+            const contact = this.getAttribute('data-contact');
             const img = this.querySelector('img');
-            if (img) {
+            
+            if (url) {
+                window.open(url, '_blank');
+            } else if (contact) {
+                if (contact.includes('@')) {
+                    // É um email
+                    window.location.href = `mailto:${contact}`;
+                } else {
+                    // É um telefone - abre WhatsApp
+                    const phoneNumber = contact.replace(/\D/g, ''); // Remove caracteres não numéricos
+                    window.open(`https://wa.me/55${phoneNumber}`, '_blank');
+                }
+            } else if (img) {
                 const alt = img.getAttribute('alt');
-                
-                // Aqui você pode adicionar links reais para suas redes sociais
                 switch(alt) {
                     case 'LinkedIn':
-                        window.open('https://linkedin.com/in/seu-perfil', '_blank');
-                        break;
-                    case 'Instagram':
-                        window.open('https://instagram.com/seu-perfil', '_blank');
+                        window.open('https://linkedin.com/in/daniely-vasconcelos', '_blank');
                         break;
                     case 'GitHub':
-                        window.open('https://github.com/seu-usuario', '_blank');
+                        window.open('https://github.com/danielyvasconcelos', '_blank');
+                        break;
+                    case 'Instagram':
+                        window.open('https://instagram.com/daniely.vasconcelos', '_blank');
+                        break;
+                    case 'Email':
+                        window.location.href = 'mailto:contato.danielyvasconcelos@gmail.com';
                         break;
                     default:
                         console.log('Rede social não configurada:', alt);
