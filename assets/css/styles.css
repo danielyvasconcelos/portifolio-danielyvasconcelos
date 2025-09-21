@@ -776,6 +776,65 @@ body {
     opacity: 0.8;
 }
 
+/* Modal de contato */
+.modal__content--form {
+    max-width: 500px;
+    background-color: var(--color-secondary);
+    border: var(--border-width) var(--border-style);
+    padding: var(--spacing-xl);
+}
+
+.contact__title {
+    font-size: var(--font-size-2xl);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__label {
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-primary);
+    text-align: left;
+}
+
+.form__input,
+.form__textarea {
+    padding: var(--spacing-sm);
+    border: var(--border-width) var(--border-style);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-sm);
+    transition: var(--transition-normal);
+}
+
+.form__input:focus,
+.form__textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.form__textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn--full {
+    width: 100%;
+    margin-top: var(--spacing-md);
+}
+
 .complementary__content {
     border: var(--border-width) var(--border-style);
     min-height: 200px;
