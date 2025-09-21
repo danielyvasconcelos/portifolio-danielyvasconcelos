@@ -19,6 +19,7 @@ function initializePortfolio() {
     setupContactButtons();
     setupCarousel();
     setupImageModal();
+    setupProfileImageHover();
 }
 
 /**
@@ -270,6 +271,7 @@ function setupImageModal() {
     const modalCaption = document.querySelector('.modal__caption');
     const closeBtn = document.querySelector('.modal__close');
     const projectImages = document.querySelectorAll('.project__image img');
+    const profileImage = document.querySelector('.profile-image');
     
     // Adiciona evento de clique para cada imagem de projeto
     projectImages.forEach(img => {
@@ -280,6 +282,16 @@ function setupImageModal() {
             modalCaption.textContent = this.alt;
         });
     });
+    
+    // Adiciona evento de clique para foto de perfil
+    if (profileImage) {
+        profileImage.addEventListener('click', function() {
+            modal.style.display = 'block';
+            modalImg.src = this.src;
+            modalImg.alt = this.alt;
+            modalCaption.textContent = 'Daniely Vasconcelos';
+        });
+    }
     
     // Fecha modal ao clicar no X
     if (closeBtn) {
@@ -301,4 +313,24 @@ function setupImageModal() {
             modal.style.display = 'none';
         }
     });
+}
+
+/**
+ * Configura efeito hover para foto de perfil
+ */
+function setupProfileImageHover() {
+    const profileImage = document.querySelector('.profile-image');
+    
+    if (profileImage) {
+        const originalSrc = profileImage.src;
+        const hoverSrc = profileImage.getAttribute('data-hover');
+        
+        profileImage.addEventListener('mouseenter', function() {
+            this.src = hoverSrc;
+        });
+        
+        profileImage.addEventListener('mouseleave', function() {
+            this.src = originalSrc;
+        });
+    }
 }

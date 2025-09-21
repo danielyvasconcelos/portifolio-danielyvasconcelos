@@ -174,13 +174,14 @@ body {
 .about__image img {
     width: 150px;
     height: 150px;
-    object-fit: cover;
-    filter: grayscale(100%);
+    object-fit: contain;
+    background-color: var(--color-secondary);
     transition: var(--transition-normal);
+    cursor: pointer;
 }
 
-.about__image:hover img {
-    filter: grayscale(0%);
+.about__image img:hover {
+    opacity: 0.8;
 }
 
 .about__text h3 {
