@@ -700,6 +700,81 @@ body {
     color: var(--color-text-light);
 }
 
+/* Modal para ampliar imagens */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal__content {
+    position: relative;
+    margin: auto;
+    padding: var(--spacing-xl);
+    width: 90%;
+    max-width: 800px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.modal__image {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    border: var(--border-width) var(--border-style);
+    background-color: var(--color-secondary);
+}
+
+.modal__close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: var(--color-secondary);
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.modal__close:hover {
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__caption {
+    color: var(--color-secondary);
+    font-size: var(--font-size-lg);
+    margin-top: var(--spacing-md);
+    font-weight: 500;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.project__image {
+    cursor: pointer;
+}
+
+.project__image:hover {
+    opacity: 0.8;
+}
+
 .complementary__content {
     border: var(--border-width) var(--border-style);
     min-height: 200px;

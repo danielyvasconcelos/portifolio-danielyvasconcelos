@@ -18,6 +18,7 @@ function initializePortfolio() {
     setupAnimations();
     setupContactButtons();
     setupCarousel();
+    setupImageModal();
 }
 
 /**
@@ -258,4 +259,46 @@ function setupCarousel() {
     
     // Auto-play (opcional)
     setInterval(nextSlide, 15000); // Muda slide a cada 15 segundos
+}
+
+/**
+ * Configura modal para ampliar imagens dos projetos
+ */
+function setupImageModal() {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.querySelector('.modal__image');
+    const modalCaption = document.querySelector('.modal__caption');
+    const closeBtn = document.querySelector('.modal__close');
+    const projectImages = document.querySelectorAll('.project__image img');
+    
+    // Adiciona evento de clique para cada imagem de projeto
+    projectImages.forEach(img => {
+        img.addEventListener('click', function() {
+            modal.style.display = 'block';
+            modalImg.src = this.src;
+            modalImg.alt = this.alt;
+            modalCaption.textContent = this.alt;
+        });
+    });
+    
+    // Fecha modal ao clicar no X
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+    }
+    
+    // Fecha modal ao clicar fora da imagem
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+    
+    // Fecha modal com tecla ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            modal.style.display = 'none';
+        }
+    });
 }
