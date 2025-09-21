@@ -1,12 +1,11 @@
-/* ==========================================================================
-   Variáveis CSS - Centraliza cores, fontes e medidas do projeto
-   ========================================================================== */
+/* Variáveis CSS - Centraliza cores, fontes e medidas do projeto*/
+  
 
 :root {
     /* Cores principais */
     --color-primary: #000000;
     --color-secondary: #ffffff;
-    --color-background: #f5f5f5;
+    --color-background: #ffffff;
     --color-text: #333333;
     --color-text-light: #666666;
     --color-accent: #000000;
