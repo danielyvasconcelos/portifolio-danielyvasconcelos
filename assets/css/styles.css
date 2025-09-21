@@ -269,6 +269,63 @@ body {
     filter: invert(1);
 }
 
+/* Seção Estatísticas */
+.stats {
+    grid-column: 1 / -1;
+}
+
+.stats__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.stat__item {
+    text-align: center;
+    padding: var(--spacing-xl);
+    background-color: #f8f9fa;
+    border: var(--border-width) var(--border-style);
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-accent);
+    transition: var(--transition-normal);
+}
+
+.stat__item:hover::before {
+    left: 0;
+}
+
+.stat__item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.stat__number {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    display: block;
+}
+
+.stat__label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 /* Seção Projetos */
 .projects {
     grid-column: 1 / -1;
@@ -894,7 +951,8 @@ body {
     }
     
     .experience__timeline,
-    .courses__content {
+    .courses__content,
+    .stats__grid {
         grid-template-columns: 1fr;
     }
     

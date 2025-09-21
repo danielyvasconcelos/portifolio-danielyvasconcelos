@@ -89,6 +89,16 @@
                 >
                   Contate-me
                 </button>
+                <a
+                  href="assets/documents/DanielyEvellin_Curriculo_Backend.pdf"
+                  class="btn btn--secondary"
+                  id="downloadResume"
+                  aria-label="Baixar currículo"
+                  download="DanielyEvellin_Curriculo_Backend.pdf"
+                  target="_blank"
+                >
+                  📄 Baixar Currículo
+                </a>
                 <button
                   class="btn btn--icon"
                   type="button"
@@ -186,6 +196,29 @@
           </div>
         </section>
       </div>
+
+      <section
+        id="stats"
+        class="section stats"
+        aria-labelledby="stats-title"
+      >
+        <h2 id="stats-title" class="section__title">Estatísticas do GitHub</h2>
+        <div class="stats__grid">
+          <div class="stat__item">
+            <div class="stat__number" data-target="25">25</div>
+            <div class="stat__label">Repositórios Públicos</div>
+          </div>
+          <div class="stat__item">
+            <div class="stat__number" data-target="166">166</div>
+            <div class="stat__label">Commits Totais</div>
+          </div>
+          <div class="stat__item">
+            <div class="stat__number" data-target="51">51</div>
+            <div class="stat__label">Pull Requests</div>
+          </div>
+
+        </div>
+      </section>
 
       <section
         id="projects"
@@ -793,6 +826,6 @@
       </div>
     </div>
 
-    <script src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
   </body>
 </html>
