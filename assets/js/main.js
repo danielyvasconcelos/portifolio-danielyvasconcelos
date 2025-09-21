@@ -117,9 +117,6 @@ function setupContactButtons() {
                     case 'Instagram':
                         window.open('https://www.instagram.com/danielyvasconcelos_/', '_blank');
                         break;
-                    case 'Email':
-                        window.location.href = 'mailto:contato.danielyvasconcelos@gmail.com';
-                        break;
                     default:
                         console.log('Rede social não configurada:', alt);
                 }
@@ -310,7 +307,18 @@ function setupContactModal() {
     if (form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            showNotification('Mensagem enviada com sucesso!', 'success');
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            const emailBody = `Nome: ${name}\n\nEmail: ${email}\n\nMensagem:\n${message}`;
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=contato.danielyvasconcelos@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+            
+            window.open(gmailUrl, '_blank');
+            
+            showNotification('Abrindo Gmail...', 'success');
             modal.style.display = 'none';
             form.reset();
         });
