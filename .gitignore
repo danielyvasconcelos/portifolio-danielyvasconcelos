@@ -105,6 +105,9 @@ coverage/
 # Arquivos específicos do projeto
 # (adicione aqui arquivos específicos que não devem ser versionados)
 
+# Arquivos com tokens/chaves de API
+assets/js/modules/github.js
+
 # Imagens temporárias ou de teste
 # assets/images/temp/
 # assets/images/test/
