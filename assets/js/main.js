@@ -1,17 +1,11 @@
-/**
- * ==========================================================================
- * JavaScript principal do portfólio - Daniely Vasconcelos
- * ==========================================================================
- */
+// JavaScript do portfólio
 
-// Aguarda o carregamento completo do DOM
+// Carrega quando a página estiver pronta
 document.addEventListener('DOMContentLoaded', function() {
     initializePortfolio();
 });
 
-/**
- * Inicializa todas as funcionalidades do portfólio
- */
+// Inicia todas as funções
 function initializePortfolio() {
     setupNavigation();
     setupSmoothScrolling();
@@ -20,32 +14,23 @@ function initializePortfolio() {
     setupCarousel();
     setupImageModal();
     setupProfileImageHover();
+    setupContactModal();
 }
 
-/**
- * Configura a navegação ativa
- */
+// Navegação ativa
 function setupNavigation() {
     const navLinks = document.querySelectorAll('.nav__link');
     
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            // Remove classe ativa de todos os links
             navLinks.forEach(l => l.classList.remove('nav__link--active'));
-            
-            // Adiciona classe ativa ao link clicado
             this.classList.add('nav__link--active');
-            
-            // Aqui você pode adicionar lógica para mostrar/esconder seções
-            // Por enquanto, apenas previne o comportamento padrão
             e.preventDefault();
         });
     });
 }
 
-/**
- * Configura rolagem suave para âncoras
- */
+// Rolagem suave
 function setupSmoothScrolling() {
     const links = document.querySelectorAll('a[href^="#"]');
     
@@ -66,11 +51,8 @@ function setupSmoothScrolling() {
     });
 }
 
-/**
- * Configura animações de entrada dos elementos
- */
+// Animações
 function setupAnimations() {
-    // Observador de interseção para animações
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -83,7 +65,6 @@ function setupAnimations() {
         rootMargin: '0px 0px -50px 0px'
     });
 
-    // Aplica animação inicial e observa elementos
     const animatedElements = document.querySelectorAll('.section');
     animatedElements.forEach(element => {
         element.style.opacity = '0';
@@ -93,24 +74,22 @@ function setupAnimations() {
     });
 }
 
-/**
- * Configura funcionalidade dos botões de contato
- */
+// Botões de contato
 function setupContactButtons() {
     const contactButton = document.querySelector('.btn--primary');
     const socialButtons = document.querySelectorAll('.btn--icon');
     
-    // Botão principal de contato
+    // Botão principal
     if (contactButton) {
         contactButton.addEventListener('click', function() {
-            const email = 'contato.danielyvasconcelos@gmail.com';
-            const subject = 'Contato via Portfólio';
-            const body = 'Olá Daniely, vi seu portfólio e gostaria de conversar sobre oportunidades.';
-            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            const contactModal = document.getElementById('contactModal');
+            if (contactModal) {
+                contactModal.style.display = 'block';
+            }
         });
     }
     
-    // Botões de redes sociais e contato
+    // Botões sociais
     socialButtons.forEach(button => {
         button.addEventListener('click', function() {
             const url = this.getAttribute('data-url');
@@ -121,24 +100,22 @@ function setupContactButtons() {
                 window.open(url, '_blank');
             } else if (contact) {
                 if (contact.includes('@')) {
-                    // É um email
                     window.location.href = `mailto:${contact}`;
                 } else {
-                    // É um telefone - abre WhatsApp
-                    const phoneNumber = contact.replace(/\D/g, ''); // Remove caracteres não numéricos
+                    const phoneNumber = contact.replace(/\D/g, '');
                     window.open(`https://wa.me/55${phoneNumber}`, '_blank');
                 }
             } else if (img) {
                 const alt = img.getAttribute('alt');
                 switch(alt) {
                     case 'LinkedIn':
-                        window.open('https://linkedin.com/in/daniely-vasconcelos', '_blank');
+                        window.open('https://linkedin.com/in/daniely-vasconcelos-b86412188', '_blank');
                         break;
                     case 'GitHub':
                         window.open('https://github.com/danielyvasconcelos', '_blank');
                         break;
                     case 'Instagram':
-                        window.open('https://instagram.com/daniely.vasconcelos', '_blank');
+                        window.open('https://www.instagram.com/danielyvasconcelos_/', '_blank');
                         break;
                     case 'Email':
                         window.location.href = 'mailto:contato.danielyvasconcelos@gmail.com';
@@ -151,12 +128,7 @@ function setupContactButtons() {
     });
 }
 
-/**
- * Utilitário para adicionar efeito de digitação
- * @param {string} elementSelector - Seletor do elemento
- * @param {string} text - Texto para digitar
- * @param {number} speed - Velocidade da digitação (ms)
- */
+// Efeito de digitação
 function typeWriter(elementSelector, text, speed = 100) {
     const element = document.querySelector(elementSelector);
     if (!element) return;
@@ -175,18 +147,12 @@ function typeWriter(elementSelector, text, speed = 100) {
     type();
 }
 
-/**
- * Utilitário para mostrar notificações
- * @param {string} message - Mensagem da notificação
- * @param {string} type - Tipo da notificação (success, error, info)
- */
+// Notificações
 function showNotification(message, type = 'info') {
-    // Cria elemento de notificação
     const notification = document.createElement('div');
     notification.className = `notification notification--${type}`;
     notification.textContent = message;
     
-    // Estilos inline para a notificação
     Object.assign(notification.style, {
         position: 'fixed',
         top: '20px',
@@ -202,12 +168,10 @@ function showNotification(message, type = 'info') {
     
     document.body.appendChild(notification);
     
-    // Anima entrada
     setTimeout(() => {
         notification.style.transform = 'translateX(0)';
     }, 100);
     
-    // Remove após 3 segundos
     setTimeout(() => {
         notification.style.transform = 'translateX(100%)';
         setTimeout(() => {
@@ -216,9 +180,7 @@ function showNotification(message, type = 'info') {
     }, 3000);
 }
 
-/**
- * Configura funcionalidade do carrossel de projetos
- */
+// Carrossel
 function setupCarousel() {
     const slides = document.querySelectorAll('.carousel__slide');
     const dots = document.querySelectorAll('.carousel__dot');
@@ -228,11 +190,9 @@ function setupCarousel() {
     let currentSlide = 0;
     
     function showSlide(index) {
-        // Remove classe active de todos os slides e dots
         slides.forEach(slide => slide.classList.remove('active'));
         dots.forEach(dot => dot.classList.remove('active'));
         
-        // Adiciona classe active ao slide e dot atual
         slides[index].classList.add('active');
         dots[index].classList.add('active');
         
@@ -249,22 +209,17 @@ function setupCarousel() {
         showSlide(prev);
     }
     
-    // Event listeners para botões
     if (nextBtn) nextBtn.addEventListener('click', nextSlide);
     if (prevBtn) prevBtn.addEventListener('click', prevSlide);
     
-    // Event listeners para dots
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => showSlide(index));
     });
     
-    // Auto-play (opcional)
-    setInterval(nextSlide, 15000); // Muda slide a cada 15 segundos
+    setInterval(nextSlide, 15000);
 }
 
-/**
- * Configura modal para ampliar imagens dos projetos
- */
+// Modal de imagens
 function setupImageModal() {
     const modal = document.getElementById('imageModal');
     const modalImg = document.querySelector('.modal__image');
@@ -273,7 +228,6 @@ function setupImageModal() {
     const projectImages = document.querySelectorAll('.project__image img');
     const profileImage = document.querySelector('.profile-image');
     
-    // Adiciona evento de clique para cada imagem de projeto
     projectImages.forEach(img => {
         img.addEventListener('click', function() {
             modal.style.display = 'block';
@@ -283,7 +237,6 @@ function setupImageModal() {
         });
     });
     
-    // Adiciona evento de clique para foto de perfil
     if (profileImage) {
         profileImage.addEventListener('click', function() {
             modal.style.display = 'block';
@@ -293,21 +246,18 @@ function setupImageModal() {
         });
     }
     
-    // Fecha modal ao clicar no X
     if (closeBtn) {
         closeBtn.addEventListener('click', function() {
             modal.style.display = 'none';
         });
     }
     
-    // Fecha modal ao clicar fora da imagem
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
             modal.style.display = 'none';
         }
     });
     
-    // Fecha modal com tecla ESC
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal.style.display === 'block') {
             modal.style.display = 'none';
@@ -315,9 +265,7 @@ function setupImageModal() {
     });
 }
 
-/**
- * Configura efeito hover para foto de perfil
- */
+// Hover da foto de perfil
 function setupProfileImageHover() {
     const profileImage = document.querySelector('.profile-image');
     
@@ -331,6 +279,40 @@ function setupProfileImageHover() {
         
         profileImage.addEventListener('mouseleave', function() {
             this.src = originalSrc;
+        });
+    }
+}
+
+// Modal de contato
+function setupContactModal() {
+    const modal = document.getElementById('contactModal');
+    const closeBtn = document.querySelector('#contactModal .modal__close');
+    const form = document.querySelector('#contactForm');
+    
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+    }
+    
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            modal.style.display = 'none';
+        }
+    });
+    
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            showNotification('Mensagem enviada com sucesso!', 'success');
+            modal.style.display = 'none';
+            form.reset();
         });
     }
 }
