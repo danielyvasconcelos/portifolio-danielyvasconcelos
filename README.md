@@ -106,14 +106,6 @@ npx serve .
 - Clique com botão direito em `index.html`
 - Selecione "Open with Live Server"
 
-## 📱 Responsividade
-
-O projeto é totalmente responsivo e foi testado nos seguintes dispositivos:
-
-- 📱 **Mobile**: 320px - 576px
-- 📱 **Tablet**: 577px - 768px
-- 💻 **Desktop**: 769px - 1200px
-- 🖥️ **Large Desktop**: 1201px+
 
 ## ♿ Acessibilidade
 
@@ -141,13 +133,6 @@ O projeto segue as diretrizes WCAG 2.1 AA:
 - [ ] Animações JavaScript avançadas
 - [ ] Blog integrado
 
-## 🤝 Como Contribuir
-
-1. **Fork** o projeto
-2. **Crie** uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. **Commit** suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** para a branch (`git push origin feature/AmazingFeature`)
-5. **Abra** um Pull Request
 
 ## 📝 Padrões de Commit
 
@@ -181,19 +166,6 @@ git commit -m "docs: atualiza README com instruções"
 - CSS minificado em produção
 - Fontes otimizadas do Google Fonts
 - Sem dependências externas desnecessárias
-
-## 🌐 Browser Support
-
-| Browser | Version |
-|---------|--------|
-| Chrome  | 60+    |
-| Firefox | 60+    |
-| Safari  | 12+    |
-| Edge    | 79+    |
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## 👩‍💻 Autora
 
